@@ -1,0 +1,84 @@
+#############################################################################
+#
+#                   Copyright (C) 1991 Kendall Bennett.
+#                           All rights reserved.
+#
+# Descripton:   Makefile for the tools.lib library.
+#               SGI Iris 4D version. 
+#
+# $Id$
+#
+#############################################################################
+
+# The following two lines will need to be edited for the environment being
+# used to compile the library.
+
+CC              = cc
+HOME            = /usr/people/rcs/stude/s892992
+
+INC_DIR         = $(HOME)/src/include
+LIB_DIR         = $(HOME)/src/lib
+LIB             = ar
+LIB_FLAGS       = rv
+LIBNAME         = tools
+INC_DEST        = $(HOME)/src/include/tools
+CC_DOPT         =
+
+CC_FLAGS        = -O -I$(INC_DIR) -L$(LIB_DIR) $(CC_DOPT) -D__IRIS4D__
+LIBFILE         = $(LIB_DIR)/lib$(LIBNAME).a
+
+# Implicit rules to make the object files for the library...
+
+.c.o:
+	$(CC) $(CC_FLAGS) -c $<
+     
+# All the object modules in the library
+
+OBJECTS         = dlist.o getopt.o hash.o hashadd.o hashpjw.o \
+                  list.o random.o set.o ssort.o avl.o
+
+all: $(LIBFILE) install_inc
+
+$(LIBFILE): $(OBJECTS)
+	$(LIB) $(LIB_FLAGS) $(LIBFILE) $(OBJECTS) 
+
+# Header file dependencies
+
+$(OBJECTS):	tools/debug.h
+
+dlist.o:	tools/dlist.h
+getopt.o:	tools/getopt.h
+hash.o:		tools/hash.h
+hashadd.o:	tools/hash.h
+hashpjw.o:	tools/hash.h
+list.o:		tools/list.h
+random.o:	tools/random.h
+set.o:		tools/set.h
+ssort.o:	tools/ssort.h
+avl.o:		tools/avl.h
+
+# Install the header files in the correct directory for normal use
+
+install_inc:
+	cp tools/*.h $(INC_DEST)
+
+clean:
+	rm -f *.o core *.cdb *.tar.Z *.zoo
+
+# Tar the files into a compressed tar archive
+
+tar:
+	tar -cvf $(LIBNAME).tar *
+
+# Zoo the files into a distribution archive to send to MS DOS
+
+zoo:
+	-rm tools.zoo
+	zoo afI tools.zoo < zoo.fil
+
+# Unzoo the files
+
+unzoo:
+	zoo xOS// tools.zoo
+	trans -u zoo.fil
+	trans -uf zoo.fil

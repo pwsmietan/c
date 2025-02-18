@@ -1,0 +1,10 @@
++-dlist.obj     &
++-getopt.obj    &
++-hash.obj      &
++-hashadd.obj   &
++-hashpjw.obj   &
++-list.obj      &
++-random.obj    &
++-set.obj       &
++-ssort.obj     &
++-avl.obj

@@ -1,0 +1,56 @@
+From <@CEARN.cern.ch:METCALF@CERNVM.CERN.CH> Wed Dec 14 02:40:30 1994
+Received: from CEARN.cern.ch (cearn.cern.ch [128.141.2.9]) by wcarchive.cdrom.com (8.6.8/8.6.6) with SMTP id CAA24403 for <nbridges@WCARCHIVE.CDROM.COM>; Wed, 14 Dec 1994 02:40:25 -0800
+Message-Id: <199412141040.CAA24403@wcarchive.cdrom.com>
+Received: from CERNVM.CERN.CH by CEARN.cern.ch (IBM VM SMTP V2R2)
+   with BSMTP id 4079; Wed, 14 Dec 94 11:37:37 SET
+Received: from CERNVM.CERN.CH (NJE origin METCALF@CERNVM) by CERNVM.CERN.CH
+ (LMail V1.2a/1.8a) with BSMTP id 3492; Wed, 14 Dec 1994 11:39:51 +0100
+Date:         Wed, 14 Dec 94 11:39:35 WET
+From: Michael Metcalf <METCALF@crnvma.cern.ch>
+Subject:      appeng.txt
+To: nbridges@WCARCHIVE.CDROM.COM
+Status: OR
+
+
+! (c) Copyright Michael Metcalf and John Reid, 1992. This file may be
+! freely used and copied for educational purposes provided this notice
+! remains attached. Extracted from "Fortran 90 Explained" Oxford
+! University Press (Oxford and New York), ISBN 0-19-853772-7.
+!
+!A recurring problem in computing is the need to manipulate a linked
+!data structure.
+!This might be a simple linked list like the one encountered in Section
+!2.13, but often a more general tree structure is required.
+!
+!The example in this Appendix consists of a module that establishes and
+!navigates one or more such trees, organized as a 'forest', and a short
+!test program for it.  Here, each node is identified by a name and has
+!any number of children, any number of siblings, and (optionally) some
+!associated real data.  Each root node is regarded as having a common
+!parent, the 'forest root' node, whose name is 'forest root'.  Thus,
+!every node has a parent.  The module provides facilities for adding a
+!named node to a specified parent, for enquiring about all the nodes
+!that are offspring of a specified node, for removing a tree or subtree,
+!and for performing I/O operations on a tree or subtree.
+!
+!The user-callable interfaces are:
+!
+!start:
+!   must be called to initialize a forest.
+!add_node:
+!   stores the data provided at the node whose parent is specified
+!   and sets up pointers to the parent and siblings (if any).
+!remove_node:
+!   deallocate all the storage occupied by a complete tree or
+!   subtree.
+!retrieve:
+!   retrieves the data stored at a specified node and the names of
+!   the parent and children.
+!dump_tree:
+!   write a complete tree or subtree.
+!restore_tree:
+!   read a complete tree or subtree.
+!finish:
+!   deallocate all the storage occupied by all the trees of the forest.
+!
+

@@ -1,0 +1,111 @@
+#############################################################################
+#
+#                   Copyright (C) 1991 Kendall Bennett.
+#                           All rights reserved.
+#
+# Descripton:   Makefile for the tools.lib library.
+#               PC Version for Borland C++ 2.0
+#
+# $Id: makefile.pc 1.5 91/09/27 21:53:56 kjb Exp $
+#
+#############################################################################
+
+# Turn on autodependency checking
+
+.AUTODEPEND
+
+# Let make know where to find all the appropriate files
+
+.PATH.asm       = .
+.PATH.lib       = \bc\lib\mylib
+.PATH.obj       = .
+.PATH.exe       = .
+
+CC              = bcc               # Name of C compiler
+ASM             = tasm              # Name of assembler
+LINK            = tlink             # Name of linker
+LIB             = tlib              # Name of librarian
+LIB_FLAGS       = /C /E
+
+# This will need to be changed to point to your include file directory
+
+INC_DEST        = \bc\include\myinc
+
+LIBNAME         = tools_            # name of library file to create
+
+!if $d(debug)
+CC_DOPT         = -v                # Turn on debugging for C compiler
+ASM_DOPT        = /zi               # Turn on debugging for assembler
+!endif
+
+# Set up memory model macros depending on version we are making
+
+!if $d(medium)
+MODEL           = m
+ASM_MODEL       = /d__MEDIUM__
+!elif $d(compact)
+MODEL           = c
+ASM_MODEL       = /d__COMPACT__
+!elif $d(large)
+MODEL           = l
+ASM_MODEL       = /d__LARGE__
+!elif $(huge)
+MODEL           = h
+ASM_MODEL       = /d__HUGE__
+!else
+MODEL           = s                 # Default to small model
+ASM_MODEL       = /d__SMALL__
+!endif
+
+LIBFILE         = $(.PATH.lib)\$(LIBNAME)$(MODEL).lib
+ASM_FLAGS       = /MX /m /i$(.PATH.asm) $(ASM_DOPT) $(ASM_MODEL)
+CC_FLAGS        = -m$(MODEL) $(CC_DOPT)
+
+# Implicit rules to make the object files for the library...
+
+.c.obj:
+    $(CC) $(CC_FLAGS) -c {$< }
+     
+.asm.obj:
+    $(ASM) $(ASM_FLAGS) $<, $(.PATH.obj)\$&
+
+# All the object modules in the library
+
+OBJECTS         = dlist.obj getopt.obj hash.obj hashadd.obj hashpjw.obj     \
+                  list.obj random.obj set.obj ssort.obj avl.obj
+
+all: $(LIBFILE) install_inc
+
+build: $(LIBFILE)
+
+$(LIBFILE): $(OBJECTS)
+    $(LIB) $(LIB_FLAGS) $< @tools.fil
+
+# Install the header files in the correct directory for normal use
+
+install_inc:
+    @copy *.h $(INC_DEST)
+
+clean:
+    @del *.obj *.exe *.sym *.bak tools.zoo
+    @del $(.PATH.lib)\*.bak
+
+rcsclean:
+    rcsclean *.c *.h
+
+# Check in the latest revisions of source files with RCS
+
+ci:
+    -ci -q -u cstub.c dlist.c getopt.c hash.c hashadd.c hashpjw.c list.c
+    -ci -q -u random.c set.c ssort.c avl.c
+    -ci -q -u debug.h dlist.h getopt.h hash.h list.h random.h set.h ssort.h
+    -ci -q -u stack.h stk.h avl.h
+
+# Check out the latest revisions of source files from RCS
+
+co:
+    -co  cstub.c dlist.c getopt.c hash.c hashadd.c hashpjw.c list.c
+    -co  random.c set.c ssort.c avl.c
+    -co  debug.h dlist.h getopt.h hash.h list.h random.h set.h ssort.h
+    -co  stack.h stk.h avl.h
+

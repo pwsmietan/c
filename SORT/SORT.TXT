@@ -1,0 +1,26 @@
+This is a collection of program implementing a wide variety of sorting
+algorithms.  The code has been optimized for speed instead of readability.
+
+Consult Robert Sedgewick's text book "Algorithms in C" if you need more
+information on a particular algorithm.  These programs were derived from
+the examples in the books.  You should be able to map the optimized
+code back to the original examples with some work.
+
+Some short descriptions on each of the algorithms:
+
+Bubble sort - one of the slowest sorting algorithms known
+Insertion sort - sort small array fast, big array very slow
+
+sorting 165000 random elements:
+
+Quick sort - fastest on average, but sort some distribution very slowly
+Merge sort - needs N/2 extra buffer, good on nearly sorted array, stable
+Heap sort  - third place in speed, does'nt need extra buffer, performance is
+             not sensitive to initial distributions.
+Shell sort - forth place in speed, may sort some distribution very slowly,
+             but is less erratic than Quick sort.
+
+  -Thomas Wang              (Computing work increases system entropy.)
+   wang@cup.hp.com          http://hpodb03.cup.hp.com/~wang/wang.html
+
+

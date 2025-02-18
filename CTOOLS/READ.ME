@@ -1,0 +1,40 @@
+                                C Tools
+                                -------
+
+This package was requested by a number of people on the Net, asking about
+how to implement generic linked list routines. It contains a set of routines
+for manipulating common data structures in C. I used it a bit myself, but
+I have currently ported most of it to C++ which is what I currently use.
+The routines can from a number of different places, so I guess I had better
+give acknowlegement where it is due:
+
+    - The AVL tree code is based on a set of routines that was published
+      in Dr Dobbs journal some years ago. It has been modified and
+      re-written a lot by me, but that is where is was derived from.
+
+    - The Hash table routines are based on those presented in Alan Holub's
+      "Compiler Design in C". I liked the ideas he used for allocating
+      nodes for the hash tables and extended the idea to all the data
+      structures in the library.
+
+    - The Set manipulation routines are based largely on code
+      presented in "Compiler Design in C" (once again). This set of routines
+      (no pun intended :-) is probably pretty much the same as the original
+      code (except that I typed it all in!), and is very useful (thanks
+      alan).
+
+    - The rest of it is basically all mine.
+
+You are free to do whatever you wish with the code, except please dont
+try to re-distribute it as your own for cash - it is here for the good of
+all.
+
+The makefile for the IBM PC should be in working order (the is the basic
+type of makefile I use for all my PC programming), however I have not
+kept the UNIX version of the makefile up to date so it will have to be
+modified. I guess that is about it...
+
+Enjoy.
+
+Oh yeah, all my code is formatted with 4 space tabs so it will look
+pretty shocking if you view it with 8 space tabs!

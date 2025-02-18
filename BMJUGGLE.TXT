@@ -1,0 +1,46 @@
+From: jack.bornstein@qm.sprintcorp.com ("Jack Bornstein")
+To: "  RAMD" <rec-arts-marching-drumcorps@cisco.com>
+Cc: "Mike (T.) Oliver" <Mike.#l#T#d##r#.Oliver@qm.sprintcorp.com>,
+        "William (R.) Sanderson" <William.#l#R#d##r#.Sanderson@qm.sprintcorp.com>
+Newsgroups: rec.arts.marching.drumcorps
+Subject: Black Market Juggler
+Date: 13 Sep 94 03:30:08 GMT
+Organization: Internet-USENET Gateway at cisco Systems
+
+As a public service to RAMD readers, I present to you the ASCII version of
+the (triple) tenor feature in the 1982 Bridgemen drum solo "Black Market
+Juggler".  This is the way is was taught to me by Spirit's 1983 quad line,
+who played it constantly. The tempo is FAST...
+
+   ---6-- ---6-- ---6-- ---6--   ---6--  ---6-- ---6--  ---6--  
+|  ...       ... ...       ... | ..      ..     .  .    .  .   |
+|4        ...           ...    |   ..      ..    .  .    .  .  |
+|4    ...           ...        |     ..      ..   .  .    .  . |
+   RLRLRL RLRLRL RLRLRL RLRLRL   RLRRLL  RLRRLL RLRLRL  RLRLRL    
+
+
+   ---6-- ---6-- ---6--   
+|  ...    ...    ...... |
+|3                      |
+|4    ...    ...        |
+   RLRLRL RLRLRL RLRLRL
+                                                                      ^^^^^^
+^
+   ---6-- ---6-- ---6-- ---6--   ---6-- ---6-- ---6-- ---6--   ---6-- ---6--
+|  .  .   .  .   .  .   ...    | .  .   ...    ...           | ...... ......
+. 
+|4  .  .   .  .   .  .         |  .  .                ...    |               
+ 
+|4   .  .   .  .   .  .    ... |   .  .    ...    ...    ... |               
+ 
+   RRLRRL RRLRRL RRLRRLR LRLRL   RRLRRL RLRLRL RLRLRL RLRLRL   RLRLRL RLRLRL
+R 
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Jack Bornstein             Spirit of Atlanta 1983-85: #2 Bass Drum
+Sprint                     Ga. Tech Band 1981-86: Snare Drum & Section Leader
+3100 Cumberland Circle
+Atlanta, GA  30339
+
+
